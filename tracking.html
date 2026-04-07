@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Track your TransportCo vehicle or cargo in real-time. Get live GPS updates, estimated arrival times, and comprehensive shipment tracking.">
+    <title>Real-Time Tracking | TransportCo - Live Vehicle & Cargo Monitoring</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html" aria-label="TransportCo Home">TransportCo</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="navbar" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="fleet.html">Fleet</a></li>
+                    <li><a href="booking.html">Booking</a></li>
+                    <li><a href="tracking.html" class="active" aria-current="page">Tracking</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="tracking-hero" aria-label="Tracking page hero section">
+        <div class="container tracking-hero-content">
+            <h1>Real-Time Tracking & Monitoring</h1>
+            <p>Track your vehicles, cargo, and shipments with live GPS updates, estimated arrival times, and comprehensive status information.</p>
+            <div class="tracking-stats">
+                <div class="stat">
+                    <span class="stat-number" data-count="99">0</span>
+                    <span class="stat-label">% Tracking Accuracy</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-count="500">0</span>
+                    <span class="stat-label">Tracked Vehicles</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-count="24">0</span>
+                    <span class="stat-label">/7 Monitoring</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-count="15">0</span>
+                    <span class="stat-label">Second Updates</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tracking Portal Section -->
+    <section class="tracking-portal-section" aria-labelledby="tracking-portal-heading">
+        <div class="container">
+            <div class="tracking-container">
+                <div class="tracking-header">
+                    <h2 id="tracking-portal-heading">Track Your Shipment or Vehicle</h2>
+                    <p class="tracking-subtitle">Enter your tracking ID, booking reference, or vehicle number to get real-time updates</p>
+                </div>
+
+                <div class="tracking-options">
+                    <div class="tracking-tabs">
+                        <button class="tracking-tab active" data-tab="shipment">Cargo Tracking</button>
+                        <button class="tracking-tab" data-tab="vehicle">Vehicle Tracking</button>
+                        <button class="tracking-tab" data-tab="booking">Booking Status</button>
+                    </div>
+
+                    <div class="tracking-content">
+                        <!-- Shipment Tracking -->
+                        <div class="tracking-tab-content active" id="shipment-tracking">
+                            <form id="shipmentTrackingForm" class="tracking-form">
+                                <div class="form-group">
+                                    <label for="shipmentTrackingId">Cargo Tracking Number</label>
+                                    <input type="text" id="shipmentTrackingId" placeholder="e.g., TC-CRG-2025-001234" required aria-required="true" />
+                                    <small>Format: TC-CRG-YYYY-NNNNNN</small>
+                                </div>
+                                <button type="submit" class="btn-primary tracking-submit">
+                                    <span class="btn-text">Track Cargo</span>
+                                    <span class="btn-loading" style="display: none;">
+                                        <span class="loading-spinner"></span> Tracking...
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Vehicle Tracking -->
+                        <div class="tracking-tab-content" id="vehicle-tracking">
+                            <form id="vehicleTrackingForm" class="tracking-form">
+                                <div class="form-group">
+                                    <label for="vehicleTrackingId">Vehicle Number or ID</label>
+                                    <input type="text" id="vehicleTrackingId" placeholder="e.g., KCA 123A or TC-VH-001" required aria-required="true" />
+                                    <small>Enter vehicle registration number or TransportCo ID</small>
+                                </div>
+                                <button type="submit" class="btn-primary tracking-submit">
+                                    <span class="btn-text">Track Vehicle</span>
+                                    <span class="btn-loading" style="display: none;">
+                                        <span class="loading-spinner"></span> Tracking...
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Booking Status -->
+                        <div class="tracking-tab-content" id="booking-tracking">
+                            <form id="bookingTrackingForm" class="tracking-form">
+                                <div class="form-group">
+                                    <label for="bookingTrackingId">Booking Reference</label>
+                                    <input type="text" id="bookingTrackingId" placeholder="e.g., TC-BKG-2025-001234" required aria-required="true" />
+                                    <small>Format: TC-BKG-YYYY-NNNNNN</small>
+                                </div>
+                                <button type="submit" class="btn-primary tracking-submit">
+                                    <span class="btn-text">Check Booking Status</span>
+                                    <span class="btn-loading" style="display: none;">
+                                        <span class="loading-spinner"></span> Checking...
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tracking Results -->
+                <div id="trackingResult" class="tracking-result" style="display:none;">
+                    <div class="result-header">
+                        <h3 id="resultTitle">Tracking Information</h3>
+                        <button class="btn-secondary" id="printResult">Print Details</button>
+                    </div>
+
+                    <div class="result-content">
+                        <div class="status-overview">
+                            <div class="status-badge" id="statusBadge">
+                                <span class="status-icon">📦</span>
+                                <span class="status-text" id="statusText">In Transit</span>
+                            </div>
+                            <div class="tracking-id-display">
+                                <strong>Tracking ID:</strong> <span id="displayTrackingId">-</span>
+                            </div>
+                        </div>
+
+                        <div class="tracking-details-grid">
+                            <div class="detail-card">
+                                <div class="detail-icon">📍</div>
+                                <div class="detail-content">
+                                    <h4>Current Location</h4>
+                                    <p id="locationText">Nairobi - Mombasa Highway</p>
+                                </div>
+                            </div>
+                            <div class="detail-card">
+                                <div class="detail-icon">🕒</div>
+                                <div class="detail-content">
+                                    <h4>Last Updated</h4>
+                                    <p id="updatedText">2025-11-17 14:32:45</p>
+                                </div>
+                            </div>
+                            <div class="detail-card">
+                                <div class="detail-icon">⏱️</div>
+                                <div class="detail-content">
+                                    <h4>Estimated Arrival</h4>
+                                    <p id="estimatedText">2025-11-17 18:30:00</p>
+                                </div>
+                            </div>
+                            <div class="detail-card">
+                                <div class="detail-icon">🚚</div>
+                                <div class="detail-content">
+                                    <h4>Vehicle</h4>
+                                    <p id="vehicleText">Toyota Hiace - KCA 123A</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Progress Timeline -->
+                        <div class="progress-timeline">
+                            <h4>Shipment Progress</h4>
+                            <div class="timeline">
+                                <div class="timeline-item completed">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <h5>Package Received</h5>
+                                        <p>Nairobi Sorting Facility</p>
+                                        <span class="timeline-time">2025-11-17 08:00</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item completed">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <h5>Departed Facility</h5>
+                                        <p>Left Nairobi for Mombasa</p>
+                                        <span class="timeline-time">2025-11-17 10:30</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item active">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <h5>In Transit</h5>
+                                        <p>Nairobi - Mombasa Highway</p>
+                                        <span class="timeline-time">Current Location</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <h5>Out for Delivery</h5>
+                                        <p>Mombasa Delivery Center</p>
+                                        <span class="timeline-time">Estimated: 17:00</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <h5>Delivered</h5>
+                                        <p>Destination - Mombasa</p>
+                                        <span class="timeline-time">Estimated: 18:30</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Live Map Placeholder -->
+                        <div class="tracking-map">
+                            <h4>Live Location Map</h4>
+                            <div class="map-placeholder">
+                                <div class="map-overlay">
+                                    <div class="map-marker">
+                                        <div class="pulse-dot"></div>
+                                        <div class="marker-pin"></div>
+                                    </div>
+                                    <div class="map-info">
+                                        <h5>Current Vehicle Location</h5>
+                                        <p id="mapLocationText">Nairobi - Mombasa Highway</p>
+                                        <p>Speed: <strong id="speedText">65 km/h</strong></p>
+                                        <p>Last Update: <strong id="mapUpdateText">2 minutes ago</strong></p>
+                                    </div>
+                                </div>
+                                <div class="map-note">
+                                    <p>🔒 <em>Live GPS tracking active. Location updates every 15 seconds.</em></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="tracking-actions">
+                            <button class="btn-primary" id="refreshTracking">Refresh Status</button>
+                            <button class="btn-secondary" id="shareTracking">Share Tracking</button>
+                            <button class="btn-secondary" id="contactSupport">Contact Support</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- No Results Message -->
+                <div id="noTrackingResult" class="no-results-message" style="display:none;">
+                    <div class="no-results-icon">🔍</div>
+                    <h3>No Tracking Information Found</h3>
+                    <p>We couldn't find any tracking information for the provided ID. Please check the number and try again, or contact our support team for assistance.</p>
+                    <div class="no-results-actions">
+                        <button class="btn-primary" id="tryAgainButton">Try Another ID</button>
+                        <a href="contact.html" class="btn-secondary">Contact Support</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tracking Features Section -->
+    <section class="tracking-features-section" aria-labelledby="features-heading">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="features-heading">Advanced Tracking Capabilities</h2>
+                <p class="section-subtitle">Comprehensive monitoring solutions for complete peace of mind</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🛰️</div>
+                    <h3>Live GPS Tracking</h3>
+                    <p>Real-time vehicle and cargo location updates with 15-second refresh intervals and precise coordinates.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Route Optimization</h3>
+                    <p>Smart routing with traffic avoidance and estimated time of arrival calculations based on current conditions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚨</div>
+                    <h3>Safety Alerts</h3>
+                    <p>Instant notifications for route deviations, delays, or unexpected stops to ensure shipment security.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Access</h3>
+                    <p>Track your shipments on any device with our responsive design and mobile-optimized interface.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>Detailed Reports</h3>
+                    <p>Comprehensive tracking history, speed analysis, and delivery confirmation with digital signatures.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Smart Notifications</h3>
+                    <p>Customizable alerts for key milestones, delays, or when your shipment is 30 minutes from destination.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section class="tracking-support-section" aria-labelledby="support-heading">
+        <div class="container">
+            <div class="support-grid">
+                <div class="support-content">
+                    <h2 id="support-heading">Need Help With Tracking?</h2>
+                    <p class="support-intro">Our support team is available 24/7 to assist with any tracking issues or questions about your shipment.</p>
+                    
+                    <div class="support-options">
+                        <div class="support-option">
+                            <div class="option-icon">📞</div>
+                            <div class="option-content">
+                                <h4>Call Tracking Support</h4>
+                                <p>+123 456 7890</p>
+                                <small>Available 24/7 for urgent tracking inquiries</small>
+                            </div>
+                        </div>
+                        <div class="support-option">
+                            <div class="option-icon">✉️</div>
+                            <div class="option-content">
+                                <h4>Email Support</h4>
+                                <p>tracking@transportco.com</p>
+                                <small>Typically respond within 2 hours</small>
+                            </div>
+                        </div>
+                        <div class="support-option">
+                            <div class="option-icon">💬</div>
+                            <div class="option-content">
+                                <h4>Live Chat</h4>
+                                <p>Available during business hours</p>
+                                <small>Quick answers to your tracking questions</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="support-visual">
+                    <div class="support-image">
+                        <img src="images/Arch Insurance Business and Dining Etiquette Seminars.jpg" alt="TransportCo tracking support team available to help" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" aria-label="Call to action">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Ship With Confidence?</h2>
+                <p>Experience our comprehensive tracking system with your next shipment.</p>
+                <div class="cta-buttons">
+                    <a href="booking.html" class="btn-primary">Book Transportation</a>
+                    <a href="contact.html" class="btn-secondary">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-section">
+                <h3>TransportCo</h3>
+                <p>Your trusted partner for smart and reliable transportation solutions across Kenya and East Africa.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><span>f</span></a>
+                    <a href="#" aria-label="Twitter"><span>t</span></a>
+                    <a href="#" aria-label="LinkedIn"><span>in</span></a>
+                    <a href="#" aria-label="Instagram"><span>ig</span></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="fleet.html">Our Fleet</a></li>
+                    <li><a href="tracking.html">Tracking</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html#staff-transport">Staff Transport</a></li>
+                    <li><a href="services.html#city-shuttle">City Shuttle</a></li>
+                    <li><a href="services.html#cargo-delivery">Cargo Delivery</a></li>
+                    <li><a href="services.html#vip-services">VIP Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <address>
+                    <p>Email: <a href="mailto:support@transportco.com">support@transportco.com</a></p>
+                    <p>Phone: <a href="tel:+1234567890">+123 456 7890</a></p>
+                    <p>Location: Nairobi, Kenya</p>
+                </address>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 TransportCo. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Book reliable transportation with TransportCo. Fast, secure, and professional booking for staff transport, city shuttles, cargo delivery, and VIP services.">
+    <title>Book Transportation | TransportCo - Reliable & Professional Transport Services</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html" aria-label="TransportCo Home">TransportCo</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="navbar" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="fleet.html">Fleet</a></li>
+                    <li><a href="booking.html" class="active" aria-current="page">Booking</a></li>
+                    <li><a href="tracking.html">Tracking</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="booking-hero" aria-label="Booking page hero section">
+        <div class="container booking-hero-content">
+            <h1>Book Your Transportation</h1>
+            <p>Fast, secure, and reliable booking for all your transportation needs. Get instant quotes and confirmations.</p>
+            <div class="booking-steps">
+                <div class="step active">
+                    <span class="step-number">1</span>
+                    <span class="step-text">Trip Details</span>
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <span class="step-text">Vehicle Selection</span>
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <span class="step-text">Confirmation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Process -->
+    <section class="booking-process container" aria-labelledby="booking-process-heading">
+        <div class="booking-container">
+            <!-- Progress Bar -->
+            <div class="booking-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 33%"></div>
+                </div>
+            </div>
+
+            <!-- Multi-Step Form -->
+            <form class="booking-form" id="bookingForm" novalidate>
+                <!-- Step 1: Trip Details -->
+                <div class="form-step active" id="step1">
+                    <div class="step-header">
+                        <h2 id="booking-process-heading">Trip Details</h2>
+                        <p>Tell us about your transportation needs</p>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Personal Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Full Name <span class="required">*</span></label>
+                                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required aria-required="true" />
+                                <div class="error-message" id="fullName-error"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email" required aria-required="true" />
+                                <div class="error-message" id="email-error"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number <span class="required">*</span></label>
+                                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required aria-required="true" />
+                                <div class="error-message" id="phone-error"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="company">Company/Organization</label>
+                                <input type="text" id="company" name="company" placeholder="Your company name (if applicable)" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Trip Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="serviceType">Service Type <span class="required">*</span></label>
+                                <select id="serviceType" name="serviceType" required aria-required="true">
+                                    <option value="" disabled selected>Select Service Type</option>
+                                    <option value="staff-transport">Staff Transport</option>
+                                    <option value="city-shuttle">City Shuttle</option>
+                                    <option value="airport-transfer">Airport Transfer</option>
+                                    <option value="corporate-event">Corporate Event</option>
+                                    <option value="cargo-delivery">Cargo Delivery</option>
+                                    <option value="vip-service">VIP Service</option>
+                                    <option value="long-distance">Long Distance</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <div class="error-message" id="serviceType-error"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tripType">Trip Type <span class="required">*</span></label>
+                                <select id="tripType" name="tripType" required aria-required="true">
+                                    <option value="" disabled selected>Select Trip Type</option>
+                                    <option value="one-way">One Way</option>
+                                    <option value="round-trip">Round Trip</option>
+                                    <option value="multi-stop">Multi-Stop</option>
+                                    <option value="hourly">Hourly Rental</option>
+                                </select>
+                                <div class="error-message" id="tripType-error"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fromLocation">From Location <span class="required">*</span></label>
+                                <input type="text" id="fromLocation" name="fromLocation" placeholder="Departure address or location" required aria-required="true" />
+                                <div class="error-message" id="fromLocation-error"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="toLocation">To Location <span class="required">*</span></label>
+                                <input type="text" id="toLocation" name="toLocation" placeholder="Destination address or location" required aria-required="true" />
+                                <div class="error-message" id="toLocation-error"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="departureDate">Departure Date <span class="required">*</span></label>
+                                <input type="date" id="departureDate" name="departureDate" min="" required aria-required="true" />
+                                <div class="error-message" id="departureDate-error"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="departureTime">Departure Time <span class="required">*</span></label>
+                                <input type="time" id="departureTime" name="departureTime" required aria-required="true" />
+                                <div class="error-message" id="departureTime-error"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-row" id="returnDateGroup" style="display: none;">
+                            <div class="form-group">
+                                <label for="returnDate">Return Date</label>
+                                <input type="date" id="returnDate" name="returnDate" min="" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="returnTime">Return Time</label>
+                                <input type="time" id="returnTime" name="returnTime" />
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="passengers">Number of Passengers <span class="required">*</span></label>
+                                <input type="number" id="passengers" name="passengers" min="1" max="100" value="1" required aria-required="true" />
+                                <div class="error-message" id="passengers-error"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="luggage">Luggage Pieces</label>
+                                <input type="number" id="luggage" name="luggage" min="0" max="50" value="0" />
+                                <small>Number of suitcases/bags</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-next btn-primary">Next: Vehicle Selection</button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Vehicle Selection -->
+                <div class="form-step" id="step2">
+                    <div class="step-header">
+                        <h2>Vehicle Selection</h2>
+                        <p>Choose the perfect vehicle for your journey</p>
+                    </div>
+
+                    <div class="vehicle-selection">
+                        <div class="vehicle-options">
+                            <div class="vehicle-card" data-vehicle="sedan">
+                                <div class="vehicle-image">
+                                    <img src="images/sedan.jpg" alt="Executive Sedan" />
+                                </div>
+                                <div class="vehicle-info">
+                                    <h3>Executive Sedan</h3>
+                                    <p class="vehicle-capacity">Up to 3 passengers, 2 luggage</p>
+                                    <p class="vehicle-features">Luxury comfort • Professional driver • WiFi available</p>
+                                    <div class="vehicle-price">
+                                        <span class="price-amount">KES 4,500</span>
+                                        <span class="price-unit">/trip</span>
+                                    </div>
+                                    <button type="button" class="btn-select-vehicle">Select Vehicle</button>
+                                </div>
+                            </div>
+
+                            <div class="vehicle-card" data-vehicle="van">
+                                <div class="vehicle-image">
+                                    <img src="images/van.jpg" alt="Comfort Van" />
+                                </div>
+                                <div class="vehicle-info">
+                                    <h3>Comfort Van</h3>
+                                    <p class="vehicle-capacity">Up to 8 passengers, 6 luggage</p>
+                                    <p class="vehicle-features">Spacious interior • AC • Perfect for groups</p>
+                                    <div class="vehicle-price">
+                                        <span class="price-amount">KES 7,200</span>
+                                        <span class="price-unit">/trip</span>
+                                    </div>
+                                    <button type="button" class="btn-select-vehicle">Select Vehicle</button>
+                                </div>
+                            </div>
+
+                            <div class="vehicle-card" data-vehicle="minibus">
+                                <div class="vehicle-image">
+                                    <img src="images/minibus.jpg" alt="Mini Bus" />
+                                </div>
+                                <div class="vehicle-info">
+                                    <h3>Mini Bus</h3>
+                                    <p class="vehicle-capacity">Up to 15 passengers, 10 luggage</p>
+                                    <p class="vehicle-features">Ideal for teams • Comfortable seating • Storage space</p>
+                                    <div class="vehicle-price">
+                                        <span class="price-amount">KES 12,000</span>
+                                        <span class="price-unit">/trip</span>
+                                    </div>
+                                    <button type="button" class="btn-select-vehicle">Select Vehicle</button>
+                                </div>
+                            </div>
+
+                            <div class="vehicle-card" data-vehicle="bus">
+                                <div class="vehicle-image">
+                                    <img src="images/bus.jpg" alt="Executive Bus" />
+                                </div>
+                                <div class="vehicle-info">
+                                    <h3>Executive Bus</h3>
+                                    <p class="vehicle-capacity">Up to 40 passengers, 20 luggage</p>
+                                    <p class="vehicle-features">Luxury coach • Restroom • Entertainment system</p>
+                                    <div class="vehicle-price">
+                                        <span class="price-amount">KES 25,000</span>
+                                        <span class="price-unit">/trip</span>
+                                    </div>
+                                    <button type="button" class="btn-select-vehicle">Select Vehicle</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <input type="hidden" id="selectedVehicle" name="selectedVehicle" required />
+
+                        <div class="quote-summary" id="quoteSummary" style="display: none;">
+                            <h3>Trip Quote</h3>
+                            <div class="quote-details">
+                                <div class="quote-item">
+                                    <span>Base Fare:</span>
+                                    <span id="baseFare">KES 0</span>
+                                </div>
+                                <div class="quote-item">
+                                    <span>Distance Charge:</span>
+                                    <span id="distanceCharge">KES 0</span>
+                                </div>
+                                <div class="quote-item">
+                                    <span>Service Fee:</span>
+                                    <span id="serviceFee">KES 500</span>
+                                </div>
+                                <div class="quote-total">
+                                    <span>Total Estimate:</span>
+                                    <span id="totalEstimate">KES 0</span>
+                                </div>
+                            </div>
+                            <p class="quote-note">Final price may vary based on exact route and requirements</p>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-prev btn-secondary">Back to Trip Details</button>
+                        <button type="button" class="btn-next btn-primary" disabled>Next: Review & Confirm</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Confirmation -->
+                <div class="form-step" id="step3">
+                    <div class="step-header">
+                        <h2>Review & Confirm</h2>
+                        <p>Please review your booking details before submission</p>
+                    </div>
+
+                    <div class="booking-summary">
+                        <div class="summary-section">
+                            <h3>Trip Details</h3>
+                            <div class="summary-grid">
+                                <div class="summary-item">
+                                    <strong>Service:</strong>
+                                    <span id="summary-service">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <strong>Route:</strong>
+                                    <span id="summary-route">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <strong>Date & Time:</strong>
+                                    <span id="summary-datetime">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <strong>Passengers:</strong>
+                                    <span id="summary-passengers">-</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="summary-section">
+                            <h3>Vehicle Information</h3>
+                            <div class="summary-grid">
+                                <div class="summary-item">
+                                    <strong>Vehicle Type:</strong>
+                                    <span id="summary-vehicle">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <strong>Estimated Cost:</strong>
+                                    <span id="summary-cost">-</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="summary-section">
+                            <h3>Contact Information</h3>
+                            <div class="summary-grid">
+                                <div class="summary-item">
+                                    <strong>Name:</strong>
+                                    <span id="summary-name">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <strong>Email:</strong>
+                                    <span id="summary-email">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <strong>Phone:</strong>
+                                    <span id="summary-phone">-</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Additional Requirements</h3>
+                            <div class="form-group full">
+                                <label for="specialRequests">Special Requests or Instructions</label>
+                                <textarea id="specialRequests" name="specialRequests" rows="4" placeholder="Any special requirements, accessibility needs, or additional instructions..."></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="termsAgreement" name="termsAgreement" required aria-required="true" />
+                                    <span class="checkmark"></span>
+                                    I agree to the <a href="terms.html" target="_blank">Terms of Service</a> and <a href="privacy.html" target="_blank">Privacy Policy</a>
+                                </label>
+                                <div class="error-message" id="termsAgreement-error"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-prev btn-secondary">Back to Vehicle Selection</button>
+                        <button type="submit" class="btn-submit btn-primary">
+                            <span class="btn-text">Confirm Booking</span>
+                            <span class="btn-loading" style="display: none;">
+                                <span class="loading-spinner"></span> Processing...
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Booking Confirmation -->
+            <div class="booking-confirmation" id="bookingConfirmation" style="display:none;">
+                <div class="confirmation-content">
+                    <div class="confirmation-icon">✓</div>
+                    <h2>Booking Confirmed!</h2>
+                    <p class="confirmation-message">Thank you for choosing TransportCo. Your booking has been successfully submitted.</p>
+                    
+                    <div class="booking-reference">
+                        <strong>Booking Reference:</strong>
+                        <span id="referenceNumber">TC-2025-001234</span>
+                    </div>
+                    
+                    <div class="confirmation-details">
+                        <p>We have sent a confirmation email with all the details to <strong id="confirmation-email">-</strong>.</p>
+                        <p>Our team will contact you within 2 hours to finalize the arrangements.</p>
+                    </div>
+                    
+                    <div class="confirmation-actions">
+                        <a href="index.html" class="btn-primary">Return to Home</a>
+                        <a href="tracking.html" class="btn-secondary">Track Your Booking</a>
+                        <button type="button" class="btn-secondary" id="newBooking">Make Another Booking</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-section container" aria-labelledby="why-choose-heading">
+        <div class="section-header">
+            <h2 id="why-choose-heading">Why Book With TransportCo?</h2>
+            <p class="section-subtitle">Experience the difference with our premium transportation services</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⏱️</div>
+                <h3>Instant Confirmation</h3>
+                <p>Get immediate booking confirmation with real-time availability updates.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Transparent Pricing</h3>
+                <p>No hidden fees. See the complete cost breakdown before you book.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Fully Insured</h3>
+                <p>Comprehensive insurance coverage for complete peace of mind.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>24/7 Support</h3>
+                <p>Round-the-clock customer support for any questions or changes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" aria-label="Call to action">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Need Immediate Assistance?</h2>
+                <p>Our booking specialists are ready to help you with complex requirements or urgent bookings.</p>
+                <div class="cta-buttons">
+                    <a href="tel:+1234567890" class="btn-primary">
+                        <span class="icon">📞</span>
+                        Call Now: +123 456 7890
+                    </a>
+                    <a href="contact.html" class="btn-secondary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-section">
+                <h3>TransportCo</h3>
+                <p>Your trusted partner for smart and reliable transportation solutions across Kenya and East Africa.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><span>f</span></a>
+                    <a href="#" aria-label="Twitter"><span>t</span></a>
+                    <a href="#" aria-label="LinkedIn"><span>in</span></a>
+                    <a href="#" aria-label="Instagram"><span>ig</span></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="fleet.html">Our Fleet</a></li>
+                    <li><a href="booking.html">Booking</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html#staff-transport">Staff Transport</a></li>
+                    <li><a href="services.html#city-shuttle">City Shuttle</a></li>
+                    <li><a href="services.html#cargo-delivery">Cargo Delivery</a></li>
+                    <li><a href="services.html#vip-services">VIP Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <address>
+                    <p>Email: <a href="mailto:info@transportco.com">info@transportco.com</a></p>
+                    <p>Phone: <a href="tel:+1234567890">+123 456 7890</a></p>
+                    <p>Location: Nairobi, Kenya</p>
+                </address>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 TransportCo. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

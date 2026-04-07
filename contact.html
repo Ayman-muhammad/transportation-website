@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Contact TransportCo for reliable transportation services, fleet rentals, and logistics support. Get in touch with our professional team.">
+    <title>Contact Us | TransportCo - Reliable Transportation Solutions</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html" aria-label="TransportCo Home">TransportCo</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="navbar" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="fleet.html">Fleet</a></li>
+                    <li><a href="booking.html">Booking</a></li>
+                    <li><a href="tracking.html">Tracking</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero" aria-label="Contact page hero section">
+        <div class="container contact-hero-content">
+            <h1>Get In Touch With TransportCo</h1>
+            <p>We're here to assist you with all your transportation needs. Reach out for bookings, inquiries, or support.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section container" aria-labelledby="contact-heading">
+        <div class="contact-grid">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h2 id="contact-heading">Get In Touch</h2>
+                <p class="contact-intro">
+                    Whether you need transportation services, fleet rentals, or logistics support, our dedicated team is ready to provide you with professional solutions tailored to your needs.
+                </p>
+
+                <div class="info-box">
+                    <div class="info-icon">📞</div>
+                    <div class="info-content">
+                        <h3>Phone</h3>
+                        <p><a href="tel:+1234567890">+123 456 7890</a></p>
+                        <p class="info-note">Available 24/7 for urgent inquiries</p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-icon">✉️</div>
+                    <div class="info-content">
+                        <h3>Email</h3>
+                        <p><a href="mailto:support@transportco.com">support@transportco.com</a></p>
+                        <p class="info-note">We respond within 2 business hours</p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-icon">📍</div>
+                    <div class="info-content">
+                        <h3>Location</h3>
+                        <p>Nairobi, Kenya</p>
+                        <p class="info-note">Serving clients nationwide</p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="info-icon">🕒</div>
+                    <div class="info-content">
+                        <h3>Working Hours</h3>
+                        <p>Mon - Sat: 8:00 AM - 6:00 PM</p>
+                        <p class="info-note">Emergency services available 24/7</p>
+                    </div>
+                </div>
+
+                <div class="social-contact">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><span>f</span></a>
+                        <a href="#" aria-label="Twitter"><span>t</span></a>
+                        <a href="#" aria-label="LinkedIn"><span>in</span></a>
+                        <a href="#" aria-label="Instagram"><span>ig</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-box">
+                <h2>Send Us a Message</h2>
+                <p class="form-intro">Fill out the form below and our team will get back to you as soon as possible.</p>
+
+                <form id="contactForm" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required aria-required="true" />
+                            <div class="error-message" id="name-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required aria-required="true" />
+                            <div class="error-message" id="email-error"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" />
+                        <div class="error-message" id="phone-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject <span class="required">*</span></label>
+                        <select id="subject" name="subject" required aria-required="true">
+                            <option value="" disabled selected>Select a subject</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="booking">Booking Request</option>
+                            <option value="service">Service Information</option>
+                            <option value="fleet">Fleet Rental</option>
+                            <option value="support">Customer Support</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <div class="error-message" id="subject-error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message <span class="required">*</span></label>
+                        <textarea id="message" name="message" rows="6" required aria-required="true" placeholder="Tell us how we can help you..."></textarea>
+                        <div class="error-message" id="message-error"></div>
+                    </div>
+
+                    <button type="submit" class="btn-primary form-submit">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-loading" style="display: none;">
+                            <span class="loading-spinner"></span> Sending...
+                        </span>
+                    </button>
+                </form>
+
+                <div id="contactConfirmation" class="contact-confirmation" style="display:none;">
+                    <div class="confirmation-icon">✓</div>
+                    <h3>Message Sent Successfully!</h3>
+                    <p>Thank you for contacting TransportCo. Our support team will get back to you within 2 business hours.</p>
+                    <button class="btn-secondary" id="sendAnother">Send Another Message</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section container" aria-labelledby="faq-heading">
+        <div class="section-header">
+            <h2 id="faq-heading">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Quick answers to common questions about our services</p>
+        </div>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <h3>How quickly can you respond to booking requests?</h3>
+                <p>We typically respond to booking requests within 2 hours during business hours. For urgent requests, please call our 24/7 support line.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do you provide transportation outside Nairobi?</h3>
+                <p>Yes, we provide transportation services across Kenya and can arrange inter-city and cross-country transport.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What payment methods do you accept?</h3>
+                <p>We accept cash, bank transfers, mobile money, and credit/debit cards for your convenience.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I track my cargo in real-time?</h3>
+                <p>Yes, all our cargo shipments come with real-time GPS tracking accessible through our tracking portal.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section" aria-labelledby="map-heading">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="map-heading">Find Us</h2>
+                <p class="section-subtitle">Visit our headquarters or contact our regional offices</p>
+            </div>
+            <div class="map-box">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.808722676663!2d36.821949!3d-1.292099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d3b3e5c17f%3A0x7d0b0b0b0b0b0b0b!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2ske!4v1234567890"
+                    width="100%"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    title="TransportCo Location in Nairobi, Kenya">
+                </iframe>
+            </div>
+            <div class="office-info">
+                <div class="office-card">
+                    <h3>Headquarters</h3>
+                    <p>Nairobi Central Business District</p>
+                    <p>P.O. Box 12345-00100</p>
+                    <p>Nairobi, Kenya</p>
+                </div>
+                <div class="office-card">
+                    <h3>Mombasa Office</h3>
+                    <p>Mombasa Island</p>
+                    <p>P.O. Box 56789-80100</p>
+                    <p>Mombasa, Kenya</p>
+                </div>
+                <div class="office-card">
+                    <h3>Kisumu Office</h3>
+                    <p>Kisumu Central</p>
+                    <p>P.O. Box 34567-40100</p>
+                    <p>Kisumu, Kenya</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" aria-label="Call to action">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Get Started?</h2>
+                <p>Contact us today for a customized transportation solution that fits your needs.</p>
+                <div class="cta-buttons">
+                    <a href="booking.html" class="btn-primary">Book Now</a>
+                    <a href="tel:+1234567890" class="btn-secondary">Call Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-section">
+                <h3>TransportCo</h3>
+                <p>Your trusted partner for smart and reliable transportation solutions across Kenya.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><span>f</span></a>
+                    <a href="#" aria-label="Twitter"><span>t</span></span></a>
+                    <a href="#" aria-label="LinkedIn"><span>in</span></a>
+                    <a href="#" aria-label="Instagram"><span>ig</span></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="fleet.html">Our Fleet</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html#staff-transport">Staff Transport</a></li>
+                    <li><a href="services.html#city-shuttle">City Shuttle</a></li>
+                    <li><a href="services.html#cargo-delivery">Cargo Delivery</a></li>
+                    <li><a href="services.html#vip-services">VIP Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <address>
+                    <p>Email: <a href="mailto:support@transportco.com">support@transportco.com</a></p>
+                    <p>Phone: <a href="tel:+1234567890">+123 456 7890</a></p>
+                    <p>Location: Nairobi, Kenya</p>
+                </address>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 TransportCo. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

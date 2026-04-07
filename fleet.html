@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore TransportCo's modern, well-maintained fleet of vehicles including executive buses, shuttle vans, luxury sedans, and cargo trucks. Professional transportation solutions for every need.">
+    <title>Our Fleet | TransportCo - Modern & Reliable Vehicle Fleet</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html" aria-label="TransportCo Home">TransportCo</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="navbar" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="fleet.html" class="active" aria-current="page">Fleet</a></li>
+                    <li><a href="booking.html">Booking</a></li>
+                    <li><a href="tracking.html">Tracking</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="fleet-hero" aria-label="Fleet page hero section">
+        <div class="container fleet-hero-content">
+            <h1>Our Modern Fleet</h1>
+            <p>Discover our comprehensive collection of reliable, clean, and professionally maintained vehicles designed for every transportation need.</p>
+            <div class="fleet-stats">
+                <div class="stat">
+                    <span class="stat-number" data-count="500">0</span>
+                    <span class="stat-label">Vehicles</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-count="12">0</span>
+                    <span class="stat-label">Vehicle Types</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-count="98">0</span>
+                    <span class="stat-label">% Availability</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-count="24">0</span>
+                    <span class="stat-label">/7 Maintenance</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fleet Navigation -->
+    <section class="fleet-nav-section" aria-label="Fleet categories navigation">
+        <div class="container">
+            <nav class="fleet-nav" aria-label="Fleet categories">
+                <ul>
+                    <li><a href="#all" class="fleet-nav-link active" data-category="all">All Vehicles</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Fleet Showcase Section -->
+    <section class="fleet-showcase-section" aria-labelledby="fleet-showcase-heading">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="fleet-showcase-heading">Our Vehicle Collection</h2>
+                <p class="section-subtitle">Professional, well-maintained vehicles for every transportation requirement</p>
+            </div>
+
+            <div class="fleet-filters">
+                <div class="filter-group">
+                    <label for="capacity-filter">Passenger Capacity</label>
+                    <select id="capacity-filter" class="filter-select">
+                        <option value="all">Any Capacity</option>
+                        <option value="1-4">1-4 Passengers</option>
+                        <option value="5-14">5-14 Passengers</option>
+                        <option value="15-30">15-30 Passengers</option>
+                        <option value="31+">31+ Passengers</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="type-filter">Vehicle Type</label>
+                    <select id="type-filter" class="filter-select">
+                        <option value="all">All Types</option>
+                        <option value="sedan">Sedan</option>
+                        <option value="suv">SUV</option>
+                        <option value="van">Van</option>
+                        <option value="minibus">Mini Bus</option>
+                        <option value="bus">Bus</option>
+                        <option value="truck">Truck</option>
+                    </select>
+                </div>
+                <button id="reset-filters" class="btn-secondary">Reset Filters</button>
+            </div>
+
+            <div class="fleet-grid" id="fleetGrid">
+                <!-- Executive Bus -->
+                <div class="fleet-card" data-category="passenger" data-capacity="31+" data-type="bus">
+                    <div class="fleet-card-header">
+                        <div class="vehicle-badge premium">Premium</div>
+                        <div class="vehicle-image">
+                            <img src="images/download (2).jpg" alt="Mercedes-Benz Executive Coach with luxury seating and modern amenities" />
+                            <div class="image-overlay">
+                                <button class="view-details-btn" data-vehicle="executive-bus">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fleet-card-body">
+                        <h3>Executive Coach</h3>
+                        <p class="vehicle-description">Luxurious long-distance coach with premium amenities for corporate travel, tours, and group transportation.</p>
+                        
+                        <div class="vehicle-specs">
+                            <div class="spec-item">
+                                <span class="spec-icon">👥</span>
+                                <span class="spec-value">50 Seats</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">❄️</span>
+                                <span class="spec-value">Climate Control</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">📶</span>
+                                <span class="spec-value">WiFi</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">🔌</span>
+                                <span class="spec-value">USB Ports</span>
+                            </div>
+                        </div>
+
+                        <div class="vehicle-features">
+                            <h4>Key Features</h4>
+                            <ul>
+                                <li>Reclining leather seats with armrests</li>
+                                <li>Onboard entertainment system</li>
+                                <li>Overhead storage compartments</li>
+                                <li>Professional driver compartment</li>
+                                <li>GPS tracking and monitoring</li>
+                            </ul>
+                        </div>
+
+                        <div class="vehicle-pricing">
+                            <div class="price-info">
+                                <span class="price-amount">KES 25,000</span>
+                                <span class="price-unit">/ day</span>
+                            </div>
+                            <div class="price-note">Includes professional driver & insurance</div>
+                        </div>
+
+                        <div class="vehicle-actions">
+                            <a href="booking.html?vehicle=executive-bus" class="btn-primary">Book This Vehicle</a>
+                            <button class="btn-secondary compare-btn" data-vehicle="executive-bus">Add to Compare</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shuttle Van -->
+                <div class="fleet-card" data-category="passenger" data-capacity="5-14" data-type="van">
+                    <div class="fleet-card-header">
+                        <div class="vehicle-badge popular">Most Popular</div>
+                        <div class="vehicle-image">
+                            <img src="images/busevi_com_ Informacije za putnike___.jpg" alt="Toyota Hiace shuttle van with comfortable seating for group transport" />
+                            <div class="image-overlay">
+                                <button class="view-details-btn" data-vehicle="shuttle-van">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fleet-card-body">
+                        <h3>Comfort Shuttle Van</h3>
+                        <p class="vehicle-description">Versatile and reliable van perfect for airport transfers, staff transport, and city shuttles.</p>
+                        
+                        <div class="vehicle-specs">
+                            <div class="spec-item">
+                                <span class="spec-icon">👥</span>
+                                <span class="spec-value">14 Seats</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">❄️</span>
+                                <span class="spec-value">AC System</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">🧳</span>
+                                <span class="spec-value">Luggage Space</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">⛽</span>
+                                <span class="spec-value">Fuel Efficient</span>
+                            </div>
+                        </div>
+
+                        <div class="vehicle-features">
+                            <h4>Key Features</h4>
+                            <ul>
+                                <li>Comfortable individual seating</li>
+                                <li>Ample legroom and headspace</li>
+                                <li>Rear luggage compartment</li>
+                                <li>Smooth suspension for city driving</li>
+                                <li>Easy access sliding doors</li>
+                            </ul>
+                        </div>
+
+                        <div class="vehicle-pricing">
+                            <div class="price-info">
+                                <span class="price-amount">KES 7,200</span>
+                                <span class="price-unit">/ day</span>
+                            </div>
+                            <div class="price-note">Perfect for small groups and corporate transport</div>
+                        </div>
+
+                        <div class="vehicle-actions">
+                            <a href="booking.html?vehicle=shuttle-van" class="btn-primary">Book This Vehicle</a>
+                            <button class="btn-secondary compare-btn" data-vehicle="shuttle-van">Add to Compare</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Executive Sedan -->
+                <div class="fleet-card" data-category="executive" data-capacity="1-4" data-type="sedan">
+                    <div class="fleet-card-header">
+                        <div class="vehicle-badge luxury">Luxury</div>
+                        <div class="vehicle-image">
+                            <img src="images/For all transportation, there will be a chater bus….jpg" alt="Mercedes-Benz E-Class executive sedan with premium interior" />
+                            <div class="image-overlay">
+                                <button class="view-details-btn" data-vehicle="executive-sedan">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fleet-card-body">
+                        <h3>Executive Sedan</h3>
+                        <p class="vehicle-description">Premium luxury sedan for business executives, VIP transfers, and special occasion transportation.</p>
+                        
+                        <div class="vehicle-specs">
+                            <div class="spec-item">
+                                <span class="spec-icon">👥</span>
+                                <span class="spec-value">4 Seats</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">🛋️</span>
+                                <span class="spec-value">Leather Interior</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">📶</span>
+                                <span class="spec-value">WiFi</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">🎵</span>
+                                <span class="spec-value">Premium Audio</span>
+                            </div>
+                        </div>
+
+                        <div class="vehicle-features">
+                            <h4>Key Features</h4>
+                            <ul>
+                                <li>Handcrafted leather upholstery</li>
+                                <li>Dual-zone climate control</li>
+                                <li>Advanced sound insulation</li>
+                                <li>Professional chauffeur service</li>
+                                <li>Complimentary bottled water</li>
+                            </ul>
+                        </div>
+
+                        <div class="vehicle-pricing">
+                            <div class="price-info">
+                                <span class="price-amount">KES 4,500</span>
+                                <span class="price-unit">/ day</span>
+                            </div>
+                            <div class="price-note">Includes professional chauffeur</div>
+                        </div>
+
+                        <div class="vehicle-actions">
+                            <a href="booking.html?vehicle=executive-sedan" class="btn-primary">Book This Vehicle</a>
+                            <button class="btn-secondary compare-btn" data-vehicle="executive-sedan">Add to Compare</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cargo Truck -->
+                <div class="fleet-card" data-category="cargo" data-capacity="1-4" data-type="truck">
+                    <div class="fleet-card-header">
+                        <div class="vehicle-badge utility">Utility</div>
+                        <div class="vehicle-image">
+                            <img src="images/Freight Transportation, Packages Shipment and Shipping Goods Concept Stock Image - Image of logistic, delivering_ 72157639.jpg" alt="Isuzu cargo truck with secure storage for logistics and delivery" />
+                            <div class="image-overlay">
+                                <button class="view-details-btn" data-vehicle="cargo-truck">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fleet-card-body">
+                        <h3>Cargo Transport Truck</h3>
+                        <p class="vehicle-description">Robust and reliable truck for logistics operations, cargo delivery, and supply chain transportation.</p>
+                        
+                        <div class="vehicle-specs">
+                            <div class="spec-item">
+                                <span class="spec-icon">📦</span>
+                                <span class="spec-value">5 Ton Capacity</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">🔒</span>
+                                <span class="spec-value">Secure Storage</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">📍</span>
+                                <span class="spec-value">GPS Tracking</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-icon">🛣️</span>
+                                <span class="spec-value">Long Distance</span>
+                            </div>
+                        </div>
+
+                        <div class="vehicle-features">
+                            <h4>Key Features</h4>
+                            <ul>
+                                <li>Reinforced cargo area with tie-downs</li>
+                                <li>Weatherproof storage compartment</li>
+                                <li>Fuel-efficient diesel engine</li>
+                                <li>Experienced logistics drivers</li>
+                                <li>Real-time shipment tracking</li>
+                            </ul>
+                        </div>
+
+                        <div class="vehicle-pricing">
+                            <div class="price-info">
+                                <span class="price-amount">KES 15,000</span>
+                                <span class="price-unit">/ day</span>
+                            </div>
+                            <div class="price-note">Includes driver and comprehensive insurance</div>
+                        </div>
+
+                        <div class="vehicle-actions">
+                            <a href="booking.html?vehicle=cargo-truck" class="btn-primary">Book This Vehicle</a>
+                            <button class="btn-secondary compare-btn" data-vehicle="cargo-truck">Add to Compare</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional vehicle cards would follow the same structure -->
+                <!-- SUV, Mini Bus, Luxury Coach, Refrigerated Truck, etc. -->
+
+            </div>
+
+            <!-- Comparison Modal -->
+            <div class="comparison-modal" id="comparisonModal" style="display: none;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Compare Vehicles</h3>
+                        <button class="modal-close" id="modalClose">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="comparisonTable">
+                            <p>Select vehicles to compare their features and specifications.</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn-secondary" id="clearComparison">Clear All</button>
+                        <button class="btn-primary" id="closeModal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fleet Maintenance Section -->
+    <section class="maintenance-section" aria-labelledby="maintenance-heading">
+        <div class="container">
+            <div class="maintenance-grid">
+                <div class="maintenance-content">
+                    <h2 id="maintenance-heading">Fleet Maintenance & Safety</h2>
+                    <p class="maintenance-intro">We maintain the highest standards of vehicle safety and reliability through our comprehensive maintenance program.</p>
+                    
+                    <div class="maintenance-features">
+                        <div class="maintenance-item">
+                            <div class="maintenance-icon">🔧</div>
+                            <div class="maintenance-text">
+                                <h4>Regular Maintenance</h4>
+                                <p>All vehicles undergo scheduled maintenance every 5,000 km or 3 months</p>
+                            </div>
+                        </div>
+                        <div class="maintenance-item">
+                            <div class="maintenance-icon">🛡️</div>
+                            <div class="maintenance-text">
+                                <h4>Comprehensive Insurance</h4>
+                                <p>Full insurance coverage for passengers, cargo, and third-party liability</p>
+                            </div>
+                        </div>
+                        <div class="maintenance-item">
+                            <div class="maintenance-icon">👨‍🔧</div>
+                            <div class="maintenance-text">
+                                <h4>Certified Technicians</h4>
+                                <p>Our maintenance team includes certified automotive technicians</p>
+                            </div>
+                        </div>
+                        <div class="maintenance-item">
+                            <div class="maintenance-icon">📊</div>
+                            <div class="maintenance-text">
+                                <h4>Digital Records</h4>
+                                <p>Complete digital maintenance history for every vehicle in our fleet</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="maintenance-visual">
+                    <div class="maintenance-image">
+                        <img src="images/Electric cars can cost 40% less to maintain than gasoline cars » Yale Climate Connections.jpg" alt="Professional vehicle maintenance and inspection process" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" aria-label="Call to action">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Choose Your Vehicle?</h2>
+                <p>Contact our fleet specialists to find the perfect vehicle for your transportation needs.</p>
+                <div class="cta-buttons">
+                    <a href="booking.html" class="btn-primary">Book a Vehicle Now</a>
+                    <a href="contact.html" class="btn-secondary">Consult Our Experts</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-section">
+                <h3>TransportCo</h3>
+                <p>Your trusted partner for reliable transportation and logistics solutions across Kenya and East Africa.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><span>f</span></a>
+                    <a href="#" aria-label="Twitter"><span>t</span></a>
+                    <a href="#" aria-label="LinkedIn"><span>in</span></a>
+                    <a href="#" aria-label="Instagram"><span>ig</span></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="fleet.html">Our Fleet</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html#staff-transport">Staff Transport</a></li>
+                    <li><a href="services.html#city-shuttle">City Shuttle</a></li>
+                    <li><a href="services.html#cargo-delivery">Cargo Delivery</a></li>
+                    <li><a href="services.html#vip-services">VIP Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <address>
+                    <p>Email: <a href="mailto:support@transportco.com">support@transportco.com</a></p>
+                    <p>Phone: <a href="tel:+1234567890">+123 456 7890</a></p>
+                    <p>Location: Nairobi, Kenya</p>
+                </address>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 TransportCo. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
